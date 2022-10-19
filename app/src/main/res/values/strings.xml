@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PrayIt</string>
+    <string name="add_person">Add A Person</string>
+    <string name="hint_name">Name...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Person not saved because no information provided</string>
+
+</resources>
