@@ -19,9 +19,16 @@ class PersonRepository {
     LiveData<List<Person>> getAllPersons() {
         return mAllPersons;
     }
+
     void insert(Person person) {
         PrayItDatabase.databaseWriteExecutor.execute(() -> {
             mPersonDao.insert(person);
+        });
+    }
+
+    void delete(Person person) {
+        PrayItDatabase.databaseWriteExecutor.execute(() -> {
+            mPersonDao.deletePerson(person);
         });
     }
 }

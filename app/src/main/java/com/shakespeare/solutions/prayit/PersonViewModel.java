@@ -20,4 +20,6 @@ public class PersonViewModel extends AndroidViewModel {
     LiveData<List<Person>> getAllPersons() {return mAllPersons;}
 
     public void insert(Person person){mRepository.insert(person);}
+
+    public void delete(Person person){mRepository.delete(person);}
 }
