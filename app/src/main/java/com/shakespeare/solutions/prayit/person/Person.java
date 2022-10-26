@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

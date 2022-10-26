@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import android.app.Application;
 
@@ -17,7 +17,7 @@ public class PersonViewModel extends AndroidViewModel {
         mAllPersons = mRepository.getAllPersons();
     }
 
-    LiveData<List<Person>> getAllPersons() {return mAllPersons;}
+    public LiveData<List<Person>> getAllPersons() {return mAllPersons;}
 
     public void insert(Person person){mRepository.insert(person);}
 

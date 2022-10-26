@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.util;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.shakespeare.solutions.prayit.R;
+
 import java.lang.annotation.Native;
 
 abstract public class SwipeToDeleteCallback extends ItemTouchHelper.Callback {
@@ -26,7 +28,7 @@ abstract public class SwipeToDeleteCallback extends ItemTouchHelper.Callback {
     private int intrinsicWidth;
     private int intrinsicHeight;
 
-    SwipeToDeleteCallback(Context context) {
+    protected SwipeToDeleteCallback(Context context) {
         this.context = context;
         this.background = new ColorDrawable();
         this.backgroundColor = Color.parseColor("#b80f0a");

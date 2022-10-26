@@ -9,8 +9,8 @@ android {
         applicationId "com.shakespeare.solutions.prayit"
         minSdk 29
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,8 +29,8 @@ android {
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
-    // Dependency for swipe to delete
     implementation 'com.google.android.material:material:1.0.0'
 
     // Dependencies for working with Architecture components
@@ -38,6 +38,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
     annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 

@@ -1,8 +1,10 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
+
+import com.shakespeare.solutions.prayit.util.db.PrayItDatabase;
 
 import java.util.List;
 

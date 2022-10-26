@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
