@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.util.db;
 
 import android.content.Context;
 
@@ -7,6 +7,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.shakespeare.solutions.prayit.person.Person;
+import com.shakespeare.solutions.prayit.person.PersonDAO;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,10 +20,10 @@ public abstract class PrayItDatabase extends RoomDatabase {
 
     private static volatile PrayItDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor  =
+    public static final ExecutorService databaseWriteExecutor  =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static PrayItDatabase getDatabase(final Context context) {
+    public static PrayItDatabase getDatabase(final Context context) {
         if(INSTANCE == null) {
             synchronized (PrayItDatabase.class) {
                 if(INSTANCE == null) {

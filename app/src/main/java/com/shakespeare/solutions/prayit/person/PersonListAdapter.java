@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import android.view.ViewGroup;
 
@@ -24,7 +24,7 @@ public class PersonListAdapter extends ListAdapter<Person, PersonViewHolder> {
     }
 
 
-    static class PersonDiff extends DiffUtil.ItemCallback<Person> {
+    public static class PersonDiff extends DiffUtil.ItemCallback<Person> {
 
         @Override
         public boolean areItemsTheSame(@NonNull Person oldItem, @NonNull Person newItem) {

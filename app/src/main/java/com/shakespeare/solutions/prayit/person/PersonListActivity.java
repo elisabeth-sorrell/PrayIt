@@ -1,4 +1,10 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -12,22 +18,14 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.shakespeare.solutions.prayit.person.NewPersonActivity;
-import com.shakespeare.solutions.prayit.person.Person;
-import com.shakespeare.solutions.prayit.person.PersonListAdapter;
-import com.shakespeare.solutions.prayit.person.PersonViewModel;
+import com.shakespeare.solutions.prayit.R;
 import com.shakespeare.solutions.prayit.util.SwipeToDeleteCallback;
-
-public class MainActivity extends AppCompatActivity {
+// TODO: Right now, this is more of a placeholder for what is in the Main Activity at the moment.
+//      once we have our official welcome page, we'll make a copy of the "person activity" in the main
+//      activity and move it here.
+public class PersonListActivity extends AppCompatActivity {
     private PersonViewModel personViewModel;
     private final String APP_NAME="Harvest Helper";
     public static final int NEW_PERSON_ACTIVITY_REQUEST_CODE = 1;
@@ -49,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
         // Delete a person
         enableSwipeToDeleteAndUndo(adapter, recyclerView);
 
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         // Go to different activity
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, NewPersonActivity.class);
+            Intent intent = new Intent(PersonListActivity.this, NewPersonActivity.class);
             newPersonActivityResultLauncher.launch(intent);
         });
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PrayIt</string>
+    <string name="app_name">Harvest Helper</string>
     <string name="add_person">Add A Person</string>
     <string name="hint_name">Name...</string>
     <string name="button_save">Save</string>

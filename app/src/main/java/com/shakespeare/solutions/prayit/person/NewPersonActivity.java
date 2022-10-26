@@ -1,4 +1,4 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.shakespeare.solutions.prayit.R;
 
 public class NewPersonActivity extends AppCompatActivity {
 

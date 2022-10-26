@@ -1,8 +1,10 @@
-package com.shakespeare.solutions.prayit;
+package com.shakespeare.solutions.prayit.person;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
+
+import com.shakespeare.solutions.prayit.util.db.PrayItDatabase;
 
 import java.util.List;
 
@@ -19,9 +21,16 @@ class PersonRepository {
     LiveData<List<Person>> getAllPersons() {
         return mAllPersons;
     }
+
     void insert(Person person) {
         PrayItDatabase.databaseWriteExecutor.execute(() -> {
             mPersonDao.insert(person);
+        });
+    }
+
+    void delete(Person person) {
+        PrayItDatabase.databaseWriteExecutor.execute(() -> {
+            mPersonDao.deletePerson(person);
         });
     }
 }
