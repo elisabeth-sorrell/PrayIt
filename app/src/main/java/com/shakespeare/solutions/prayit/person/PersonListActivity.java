@@ -47,6 +47,7 @@ public class PersonListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
         // Delete a person
         enableSwipeToDeleteAndUndo(adapter, recyclerView);
 
