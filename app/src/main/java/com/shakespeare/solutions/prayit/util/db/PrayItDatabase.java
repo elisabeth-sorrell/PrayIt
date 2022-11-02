@@ -28,7 +28,8 @@ public abstract class PrayItDatabase extends RoomDatabase {
             synchronized (PrayItDatabase.class) {
                 if(INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            PrayItDatabase.class, "prayit_database").build();
+                            PrayItDatabase.class, "prayit_database").setQueryCallback(((sqlQuery, bindArgs) ->
+                            System.out.println("SQL QUERY: " + sqlQuery + ".... Args: " + bindArgs)), Executors.newSingleThreadExecutor()).build();
                 }
             }
         }

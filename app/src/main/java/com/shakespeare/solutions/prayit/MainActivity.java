@@ -29,11 +29,12 @@ import com.shakespeare.solutions.prayit.person.PersonViewModel;
 import com.shakespeare.solutions.prayit.util.ItemClickSupport;
 import com.shakespeare.solutions.prayit.util.SwipeToDeleteCallback;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 public class MainActivity extends AppCompatActivity {
     private PersonViewModel personViewModel;
     private final String APP_NAME="Harvest Helper";
     public static final String INTENT_PERSON = "person";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 Person person = adapter.getCurrentList().get(position);
                 Intent intent = new Intent(MainActivity.this, PersonDetail.class);
-                intent.putExtra(INTENT_PERSON, person);
+                intent.putExtra(INTENT_PERSON, person.getId());
                 MainActivity.this.startActivity(intent);
             }
         });
