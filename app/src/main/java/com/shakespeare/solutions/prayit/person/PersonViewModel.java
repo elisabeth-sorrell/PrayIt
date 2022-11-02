@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class PersonViewModel extends AndroidViewModel {
     private PersonRepository mRepository;
@@ -22,4 +23,8 @@ public class PersonViewModel extends AndroidViewModel {
     public void insert(Person person){mRepository.insert(person);}
 
     public void delete(Person person){mRepository.delete(person);}
+
+    public void update(Person person) {mRepository.update(person);}
+
+    public LiveData<Person> getPersonById(int id) throws ExecutionException, InterruptedException {return mRepository.getPersonById(id);}
 }

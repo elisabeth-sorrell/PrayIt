@@ -4,5 +4,8 @@
     <string name="hint_name">Name...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Person not saved because no information provided</string>
+    <string name="img_person_profile">Profile Image</string>
+    <string name="person_name_label">Name</string>
+
 
 </resources>

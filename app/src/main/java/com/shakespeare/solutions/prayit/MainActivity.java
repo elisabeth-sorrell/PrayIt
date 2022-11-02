@@ -23,15 +23,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.shakespeare.solutions.prayit.person.NewPersonActivity;
 import com.shakespeare.solutions.prayit.person.Person;
+import com.shakespeare.solutions.prayit.person.PersonDetail;
 import com.shakespeare.solutions.prayit.person.PersonListAdapter;
 import com.shakespeare.solutions.prayit.person.PersonViewModel;
+import com.shakespeare.solutions.prayit.util.ItemClickSupport;
 import com.shakespeare.solutions.prayit.util.SwipeToDeleteCallback;
+
+import io.reactivex.disposables.CompositeDisposable;
 
 public class MainActivity extends AppCompatActivity {
     private PersonViewModel personViewModel;
     private final String APP_NAME="Harvest Helper";
-    public static final int NEW_PERSON_ACTIVITY_REQUEST_CODE = 1;
-
+    public static final String INTENT_PERSON = "person";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,15 @@ public class MainActivity extends AppCompatActivity {
         final PersonListAdapter adapter = new PersonListAdapter(new PersonListAdapter.PersonDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                Person person = adapter.getCurrentList().get(position);
+                Intent intent = new Intent(MainActivity.this, PersonDetail.class);
+                intent.putExtra(INTENT_PERSON, person.getId());
+                MainActivity.this.startActivity(intent);
+            }
+        });
 
         // Delete a person
         enableSwipeToDeleteAndUndo(adapter, recyclerView);
@@ -75,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(this) {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                int position = viewHolder.getAdapterPosition();
+                int position = viewHolder.getAbsoluteAdapterPosition();
                 Person person = adapter.getCurrentList().get(position);
                 personViewModel.delete(person);
 

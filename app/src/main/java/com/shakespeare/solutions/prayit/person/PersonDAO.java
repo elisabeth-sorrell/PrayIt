@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -22,4 +23,10 @@ public interface PersonDAO {
 
     @Delete
     void deletePerson(Person person);
+
+    @Update
+    void updatePerson(Person person);
+
+    @Query("SELECT * FROM person_table WHERE id = :id")
+    LiveData<Person> getPersonById(int id);
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".person.PersonDetail">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@android:color/white"
+            android:elevation="4dp"
+            >
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+   <LinearLayout
+       android:id="@+id/profile_img_area"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/detail_backdrop_height"
+       android:background="@color/colorAccentHalfOpacity"
+       android:orientation="vertical">
+       <ImageView
+           android:layout_width="@dimen/detail_icon_size"
+           android:layout_height="@dimen/detail_icon_size"
+           android:layout_marginTop="75dp"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/profile_pic"
+           android:contentDescription="@string/img_person_profile"/>
+       <TextView
+           android:id="@+id/person_name"
+           android:layout_marginTop="10dp"
+           android:layout_gravity="center_horizontal"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:textSize="21sp"/>
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_anchor="@id/profile_img_area"
+        app:layout_anchorGravity="bottom|end"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/face_48px"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/person_name_label"
+                android:inputType="textPersonName"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

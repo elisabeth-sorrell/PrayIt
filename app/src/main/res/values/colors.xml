@@ -10,6 +10,7 @@
     <color name="colorPrimary">#F69000</color>
     <color name="colorPrimaryDark">#F6C624</color>
     <color name="colorAccent">#53B1B1</color>
+    <color name="colorAccentHalfOpacity">#8053B1B1</color>
     <color name="blue_1">#00101f</color>
     <color name="blue_5">#0078ff</color>
     <color name="buttonLabel">#FFFFFF</color>

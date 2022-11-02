@@ -19,6 +19,7 @@ public class PersonViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         personItemView = itemView.findViewById(R.id.textView);
         explanationTextView = itemView.findViewById(R.id.explanationTextView);
+
     }
 
     public void bind(String text) {
