@@ -17,13 +17,8 @@ public class Person implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @Ignore
     public Person(@NonNull String name) {this.name = name;}
 
-    public Person(@NonNull int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public String getName() {return this.name;}
     public void setName(String name) {this.name = name;}

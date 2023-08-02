@@ -22,6 +22,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.shakespeare.solutions.prayit.R;
 import com.shakespeare.solutions.prayit.util.SwipeToDeleteCallback;
+
+import java.util.concurrent.ExecutionException;
+
 // TODO: Right now, this is more of a placeholder for what is in the Main Activity at the moment.
 //      once we have our official welcome page, we'll make a copy of the "person activity" in the main
 //      activity and move it here.
@@ -84,7 +87,13 @@ public class PersonListActivity extends AppCompatActivity {
                         // TODO not sure if this is a good idea...
                         //       in the UI it won't make a difference,
                         //       but it had been really deleted, and now really added in the db.
-                        personViewModel.insert(person);
+                        try {
+                            personViewModel.insert(person);
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 
@@ -105,7 +114,13 @@ public class PersonListActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if(result.getResultCode() == RESULT_OK) {
                         Person person = new Person(result.getData().getStringExtra(NewPersonActivity.EXTRA_REPLY));
-                        personViewModel.insert(person);
+                        try {
+                            personViewModel.insert(person);
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     } else {
                         System.out.println(result.getResultCode());
                         Toast.makeText(getApplicationContext(), R.string.empty_not_saved, Toast.LENGTH_LONG).show();

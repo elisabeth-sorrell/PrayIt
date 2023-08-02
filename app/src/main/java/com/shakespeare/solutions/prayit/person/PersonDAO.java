@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface PersonDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Person person);
+    long insert(Person person);
 
     @Query("DELETE FROM person_table")
     void deleteAll();

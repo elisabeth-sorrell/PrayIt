@@ -20,7 +20,7 @@ public class PersonViewModel extends AndroidViewModel {
 
     public LiveData<List<Person>> getAllPersons() {return mAllPersons;}
 
-    public void insert(Person person){mRepository.insert(person);}
+    public long insert(Person person) throws ExecutionException, InterruptedException {return mRepository.insert(person);}
 
     public void delete(Person person){mRepository.delete(person);}
 

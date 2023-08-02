@@ -59,7 +59,6 @@ public class PersonDetail extends AppCompatActivity {
 
         nameText.setOnEditorActionListener((v, actionId, event) -> {
             boolean handled = false;
-            System.out.println("tapped" + actionId);
             String newName = nameText.getText().toString();
 
             if(actionId == EditorInfo.IME_ACTION_DONE) {
