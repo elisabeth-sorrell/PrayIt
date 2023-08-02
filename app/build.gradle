@@ -39,11 +39,12 @@ dependencies {
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.6.0-alpha01'
     annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
 
     // RxJava support for Room
    // implementation "android.arch.persistence.room:rxjava2:1.1.1"
-    implementation 'androidx.room:room-rxjava2:2.4.3'
+    implementation 'androidx.room:room-rxjava2:2.5.2'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 
@@ -59,13 +60,20 @@ dependencies {
     // Testing
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.6.0-alpha01"
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.6.0-alpha01'
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
     androidTestImplementation "com.google.truth:truth:1.0.1"
+    implementation "androidx.tracing:tracing:1.1.0"
+    // Unit Testing
+    testImplementation "io.bloco:faker:${fakerVersion}"
+
+    // Instrumentation Testing
+    androidTestImplementation "io.bloco:faker:${fakerVersion}"
+
 
     // Testing support
     androidTestImplementation "android.arch.core:core-testing:1.1.1"
