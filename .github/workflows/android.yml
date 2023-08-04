@@ -26,7 +26,7 @@ jobs:
       run: ./gradlew build
 
     - name: run int tests
-    - uses: reactivecircus/android-emulator-runner@v2
+      uses: reactivecircus/android-emulator-runner@v2
       with:
         cmd: ./gradlew connectedCheck --stacktrace
         java-version: '11'
