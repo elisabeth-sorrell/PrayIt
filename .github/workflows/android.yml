@@ -24,3 +24,13 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+
+    - uses: reactivecircus/android-emulator-runner@v2
+    - name: run int tests
+      with:
+        java-version: '11'
+        api-level: 23
+        target: default
+        arch: x86
+        profile: Nexus 6
+        script: ./gradlew connectedCheck --stacktrace
