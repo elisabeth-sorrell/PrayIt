@@ -29,7 +29,6 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       with:
         script: ./gradlew connectedCheck --stacktrace
-        java-version: '11'
         api-level: 30
         target: default
         arch: x86
